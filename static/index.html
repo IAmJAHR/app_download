@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VideoDrop — TikTok, Facebook &amp; YouTube</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/static/icon.svg" />
+  <meta name="theme-color" content="#6366f1" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <main class="container">
+    <header class="header">
+      <div class="logo">
+        <img src="/static/icon.svg" alt="VideoDrop" width="38" height="38" />
+        <div>
+          <h1>VideoDrop</h1>
+          <p class="subtitle">Descarga videos compartiendo el enlace</p>
+        </div>
+      </div>
+
+      <div class="platforms">
+        <span class="badge badge-tiktok" id="badge-tiktok">TikTok</span>
+        <span class="badge badge-facebook" id="badge-facebook">Facebook</span>
+        <span class="badge badge-youtube" id="badge-youtube">YouTube</span>
+      </div>
+    </header>
+
+    <section class="card input-card">
+      <label for="url-input" class="input-label">Pega o comparte el enlace aquí</label>
+      <div class="input-row">
+        <input
+          id="url-input"
+          type="text"
+          placeholder="https://www.tiktok.com/... o enlace de Facebook / YouTube"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="paste-btn" class="btn btn-secondary" type="button" title="Pegar desde el portapapeles">
+          Pegar
+        </button>
+        <button id="clear-btn" class="btn btn-ghost hidden" type="button" title="Limpiar">
+          ✕
+        </button>
+      </div>
+
+      <div class="controls-row">
+        <div class="select-wrap">
+          <label for="format-select">Formato / Calidad</label>
+          <select id="format-select">
+            <option value="best">Video MP4 (Mejor calidad)</option>
+            <option value="1080">Video MP4 (Hasta 1080p)</option>
+            <option value="720">Video MP4 (Hasta 720p)</option>
+            <option value="480">Video MP4 (Hasta 480p)</option>
+            <option value="mp3">Solo Audio (MP3)</option>
+          </select>
+        </div>
+
+        <div class="action-buttons">
+          <button id="preview-btn" class="btn btn-secondary" type="button">
+            Ver vista previa
+          </button>
+          <button id="download-btn" class="btn btn-primary" type="button">
+            Descargar
+          </button>
+        </div>
+      </div>
+
+      <p id="status-msg" class="status-msg hidden"></p>
+    </section>
+
+    <section id="preview-card" class="card preview-card hidden">
+      <img id="preview-thumb" src="" alt="Miniatura del video" />
+      <div class="preview-info">
+        <div class="preview-meta">
+          <span id="preview-platform" class="pill">Plataforma</span>
+          <span id="preview-duration" class="duration">0:00</span>
+        </div>
+        <h2 id="preview-title">Título del video</h2>
+        <p id="preview-uploader" class="uploader">Autor</p>
+      </div>
+    </section>
+
+    <section id="progress-card" class="card progress-card hidden">
+      <div class="progress-header">
+        <span id="progress-label">Preparando descarga...</span>
+        <span id="progress-percent">0%</span>
+      </div>
+      <div class="progress-track">
+        <div id="progress-bar" class="progress-fill" style="width: 0%"></div>
+      </div>
+      <div class="progress-footer">
+        <span id="progress-details"></span>
+        <a id="save-file-link" class="btn btn-primary btn-sm hidden" href="#" download>
+          Guardar archivo
+        </a>
+      </div>
+    </section>
+
+    <section class="card history-card">
+      <div class="history-header">
+        <h3>Descargas recientes</h3>
+        <button id="refresh-history-btn" class="btn btn-ghost btn-sm" type="button">Actualizar</button>
+      </div>
+      <ul id="history-list" class="history-list">
+        <li class="history-empty">Aún no hay videos descargados.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

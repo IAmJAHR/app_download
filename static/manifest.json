@@ -1,0 +1,25 @@
+{
+  "name": "VideoDrop - Descargador de Videos",
+  "short_name": "VideoDrop",
+  "description": "Descarga videos de TikTok, Facebook y YouTube compartiendo el enlace.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/static/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
