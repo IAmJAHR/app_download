@@ -344,6 +344,11 @@ async def service_worker() -> FileResponse:
     return FileResponse(STATIC_DIR / "sw.js", media_type="application/javascript")
 
 
+@app.get("/.well-known/assetlinks.json")
+async def assetlinks() -> FileResponse:
+    return FileResponse(STATIC_DIR / "assetlinks.json", media_type="application/json")
+
+
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request) -> HTMLResponse:
     html_path = STATIC_DIR / "index.html"

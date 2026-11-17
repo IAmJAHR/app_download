@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.sslip.appdownload_videodrop_xcrg76_baeffb_169_58_88_244.twa",
+        "sha256_cert_fingerprints": ["44:F2:17:64:39:62:08:D9:6D:CE:C3:57:34:43:93:9E:53:C7:E9:A2:85:CB:CC:B9:5A:23:99:84:7E:EF:DA:6F"]
+      }
+    }]
